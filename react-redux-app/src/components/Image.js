@@ -14,6 +14,10 @@ const Image = props => {
   if (props.isFetching) {
     return <Loader type="Puff" color="#00BFFF" height="100" width="100" />;
   }
+  if (props.error) {
+    return <div className='imageContainer'><h1>{props.error}</h1><button onClick={getImage}>Try Again</button>
+    </div>
+  }
   return (
     <div className='imageContainer'>
       <button onClick={getImage}>GO!</button>

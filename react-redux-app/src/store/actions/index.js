@@ -15,5 +15,7 @@ export const fetchImageUrl = (
     .then(res => {
       dispatch({ type: FETCH_imageUrl_SUCCESS, payload: res.data.message });
     })
-    .catch(err => console.log(err.response));
+    .catch(err => {
+      dispatch({type: FETCH_imageUrl_FAILURE})
+    });
 };

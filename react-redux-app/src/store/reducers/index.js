@@ -27,7 +27,12 @@ import {
           imageUrl: action.payload
         };
       case FETCH_imageUrl_FAILURE:
-        console.log('You are out of luck!!')
+        return {
+          ...state,
+          error: 'Unable to fetch requested resource!',
+          isFetching: false,
+          imageUrl: ''
+        }
       default:
         return state;
     }
